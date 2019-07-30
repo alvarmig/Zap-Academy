@@ -1,0 +1,30 @@
+body {
+	background: #fff;
+	font-family: 'Poppins', sans-serif;
+}
+tr, td {
+	border: 1px solid red;
+} 		
+#table-test{
+	width: 750px;
+	height: 10px;
+}
+#header tr td:nth-child(1){
+	width: 590px;
+}
+#browsed-games tr td{
+	width: 100px;
+	height: 100px;
+}
+#game-genres tr td{
+	width: 100px;
+	height: 100px;
+}
+#table-test p{
+	text-align: center;
+}
+#browsed-games{
+	border: none;
+	text-align: center;
+}
+
