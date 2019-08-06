@@ -1,0 +1,13 @@
+.columns-grid{
+    border: 1px solid red;
+    
+}
+.header-img{
+    width: 50%;
+
+}
+.games-grid img{
+    width: 200px;
+    max-width: 200px;
+    height: auto;
+}
