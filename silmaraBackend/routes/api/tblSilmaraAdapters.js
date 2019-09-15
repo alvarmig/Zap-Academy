@@ -3,7 +3,8 @@ const mysql = require('mysql');
 const router = express.Router(); // required to use routes
 
 // Create connection
-const connection = mysql.createConnection({
+const pool = mysql.createPool({
+  connectionLimit: 2,
   host: 'localhost',
   user: 'root',
   password: 'oracle',
@@ -11,7 +12,7 @@ const connection = mysql.createConnection({
 });
 
 // Connect
-connection.connect(err => {
+pool.getConnection((err, connection) => {
   if (err) {
     console.error('error connecting: ' + err.stack);
     return;
@@ -20,18 +21,43 @@ connection.connect(err => {
   console.log('MySQL Connected');
 });
 
-// Select Items
+// Select Items GET
 router.get('/', (req, res) => {
-  let sql = 'SELECT * FROM products';
-  let query = connection.query(sql, (err, results) => {
+
+  let sql = `CALL selectProducts`;
+
+  let query = pool.query(sql, (err, results) => {
     if (err) throw err;
 
-    res.json(results);
+    res.json(results[0]);
     console.log(results);
-    //res.send('Posts fetched...');
   });
-  //connection.end();
 });
 
-module.exports = connection;
+// Select Items Category GET
+router.get('/category/:category', (req, res) => {
+
+  let sql = `CALL selectProductsCaregory("${req.params.category}")`;
+
+  let query = pool.query(sql, (err, results) => {
+    if (err) throw err;
+
+    res.json(results[0]);
+    console.log(results);
+  });
+});
+
+// Select Single Product GET
+router.get('/product/:id', (req, res) => {
+  let sql = `CALL selectProductsByID("${req.params.id}")`;
+
+  let query = pool.query(sql, (err, results) => {
+    if (err) throw err;
+
+    res.json(results[0]);
+    console.log(results);
+  });
+});
+
+module.exports = pool;
 module.exports = router;

@@ -6,7 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="css/styles-product-details.css"
+    />
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
@@ -72,34 +76,31 @@
     <main class="container-fluid main-container">
       <!-- MAIN -->
       <div class="container">
-        <!-- jumbotron & banner -->
-        <div class="jumbotron d-none d-lg-block d-xl-block"></div>
-      </div>
-      <div id="img-banner" class=" d-none d-block d-sm-block d-lg-none text-center">
-        <img src="https://via.placeholder.com/804x424" class="img-fluid" alt="banner" />
-      </div>
-      <!-- END jumbotron & banner -->
-
-      <div class="container filters-box text-center">
-        <!-- Filters -->
+        <!-- breadcrumb (navigation links) -->
         <div class="row">
-          <div id="filter0" class="col filter" name="filter" value="all">See All</div>
-          <div id="filter1" class="col filter" name="filter" value="aretes">aretes</div>
-          <div id="filter2" class="col filter" name="filter" value="anillos">anillos</div>
-          <div id="filter3" class="col filter" name="filter" value="cadenas lentes">cadenas lentes</div>
+          <div class="col-sm">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">
+                  Product Details
+                </li>
+              </ol>
+            </nav>
+          </div>
         </div>
       </div>
-      <!-- END Filters -->
+      <!-- END breadcrumb -->
 
-      <div class="container-fluid items-list text-center">
-        <!-- item List -->
-        <div id="item-box" class="row mx-md-2"></div>
+      <div class="container">
+        <div class="row product-details">
+
+        </div>
       </div>
-      <!-- END item List -->
     </main>
     <!-- END MAIN -->
 
-    <footer>
+    <footer class="footer">
       <!--FOOTER -->
       <div class="container-fluid footer-container">
         <div class="row mx-sm-3 mx-md-5">
@@ -138,7 +139,6 @@
 
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/scripts.js"></script>
-    <script type="text/javascript" src="js/script-category.js"></script>
+    <script type="text/javascript" src="js/scripts-product-details.js"></script>
   </body>
 </html>
